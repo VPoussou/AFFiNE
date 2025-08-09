@@ -11,6 +11,8 @@ declare global {
       db: number;
       username: string;
       password: string;
+      tls: any
+      lazyConnect: boolean;
       ioredis: ConfigItem<
         Omit<RedisOptions, 'host' | 'port' | 'db' | 'username' | 'password'>
       >;
@@ -50,5 +52,13 @@ defineModuleConfig('redis', {
     desc: 'The config for the ioredis client.',
     default: {},
     link: 'https://github.com/luin/ioredis',
+  },
+  tls: {
+    desc: 'Tls settings',
+    default: { rejectUnauthorized: false },
+  },
+  lazyConnect: {
+    desc: 'lazyConnect settings',
+    default: true
   },
 });
