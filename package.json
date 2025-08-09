@@ -19,7 +19,7 @@
     "node": "<23.0.0"
   },
   "scripts": {
-    "affine": "r affine.ts",
+    "affine": "node ./node_modules/.bin/r affine.ts",
     "af": "r affine.ts",
     "dev": "yarn affine dev",
     "build": "node ./node_modules/.bin/r affine.ts build",
